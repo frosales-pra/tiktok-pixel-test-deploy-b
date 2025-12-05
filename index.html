@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Pixel Test Site</title>
+
+    <!-- OpenGraph Meta Tags (Collected by Expanded Data Sharing) -->
+    <meta property="og:title" content="TikTok Pixel Test Product Page">
+    <meta property="og:description" content="Test page for TikTok Pixel and Events API security testing">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+
+    <!-- JSON-LD Structured Data (Collected by Expanded Data Sharing) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Test Product",
+      "description": "Security testing product",
+      "offers": {
+        "@type": "Offer",
+        "price": "99.99",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- ============================================ -->
+    <!-- INSERT TIKTOK PIXEL BASE CODE HERE -->
+    <!-- ============================================ -->
+    <!--
+    Paste your TikTok Pixel base code below this comment.
+    It will look like:
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;
+      // ... rest of pixel code
+    }(window, document, 'ttq');
+    </script>
+    -->
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #000;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: #fe2c55;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #fe2c55;
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: #e02649;
+        }
+
+        .btn-secondary {
+            background: #25f4ee;
+            color: #000;
+        }
+
+        .btn-secondary:hover {
+            background: #1dd9d3;
+        }
+
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #fe2c55;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .cart-summary {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-total {
+            font-size: 18px;
+            font-weight: 700;
+            padding-top: 10px;
+            border-top: 2px solid #ddd;
+        }
+
+        .event-log {
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TikTok Pixel & Events API Test Site</h1>
+        <p class="subtitle">Security testing environment for Pixel and Events API</p>
+
+        <div class="warning">
+            <strong>⚠️ Testing Environment:</strong> This page is for security testing of TikTok Pixel and Events API.
+            Use Test Event Codes to prevent charges and data collection.
+        </div>
+
+        <!-- Section 1: Product Browsing (ViewContent Event) -->
+        <div class="section">
+            <h2>🛍️ Browse Products (ViewContent Event)</h2>
+            <div class="product-grid">
+                <div class="product-card" onclick="viewProduct('test-product-1', 'Wireless Headphones', 99.99)">
+                    <div class="product-image">🎧</div>
+                    <div class="product-name">Wireless Headphones</div>
+                    <div class="product-price">$99.99</div>
+                    <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('test-product-1', 'Wireless Headphones', 99.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" onclick="viewProduct('test-product-2', 'Smart Watch', 199.99)">
+                    <div class="product-image">⌚</div>
+                    <div class="product-name">Smart Watch</div>
+                    <div class="product-price">$199.99</div>
+                    <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('test-product-2', 'Smart Watch', 199.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" onclick="viewProduct('test-product-3', 'Laptop Stand', 49.99)">
+                    <div class="product-image">💻</div>
+                    <div class="product-name">Laptop Stand</div>
+                    <div class="product-price">$49.99</div>
+                    <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('test-product-3', 'Laptop Stand', 49.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" onclick="viewProduct('test-product-4', 'Desk Lamp', 29.99)">
+                    <div class="product-image">💡</div>
+                    <div class="product-name">Desk Lamp</div>
+                    <div class="product-price">$29.99</div>
+                    <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('test-product-4', 'Desk Lamp', 29.99)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Shopping Cart (ViewCart/InitiateCheckout Events) -->
+        <div class="section">
+            <h2>🛒 Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax:</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="initiateCheckout()">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 3: Checkout Form (AddPaymentInfo/CompletePayment Events) -->
+        <div class="section">
+            <h2>💳 Checkout Form</h2>
+            <form id="checkout-form" onsubmit="return completePayment(event)">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" name="address" rows="3" required placeholder="123 Main St, City, State, ZIP"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" name="payment-method" required onchange="handlePaymentInfo()">
+                        <option value="">Select payment method</option>
+                        <option value="credit_card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="apple_pay">Apple Pay</option>
+                        <option value="google_pay">Google Pay</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Complete Purchase
+                </button>
+            </form>
+        </div>
+
+        <!-- Section 4: Newsletter Signup (Contact/Subscribe Event) -->
+        <div class="section">
+            <h2>📧 Newsletter Signup</h2>
+            <form id="newsletter-form" onsubmit="return handleNewsletter(event)">
+                <div class="form-group">
+                    <label for="newsletter-email">Email Address</label>
+                    <input type="email" id="newsletter-email" name="newsletter-email" required placeholder="your.email@example.com">
+                </div>
+
+                <button type="submit" class="btn btn-secondary">
+                    Subscribe to Newsletter
+                </button>
+            </form>
+        </div>
+
+        <!-- Section 5: Search (Search Event) -->
+        <div class="section">
+            <h2>🔍 Product Search</h2>
+            <form id="search-form" onsubmit="return handleSearch(event)">
+                <div class="form-group">
+                    <input type="text" id="search-query" name="search-query" placeholder="Search for products..." required>
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+
+        <!-- Event Log -->
+        <div class="section">
+            <h2>📊 Event Log</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 10px;">
+                Events fired on this page (visible in browser console and TikTok Pixel Helper)
+            </p>
+            <div class="event-log" id="event-log">
+                Waiting for events...
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Event Tracking -->
+    <script>
+        // Shopping cart state
+        let cart = [];
+
+        // Event logging
+        function logEvent(eventName, data) {
+            const timestamp = new Date().toISOString();
+            const logEntry = `[${timestamp}] ${eventName}: ${JSON.stringify(data)}`;
+            console.log(logEntry);
+
+            const logDiv = document.getElementById('event-log');
+            logDiv.innerHTML = logEntry + '\n' + logDiv.innerHTML;
+        }
+
+        // ViewContent Event
+        function viewProduct(productId, productName, price) {
+            logEvent('ViewContent', {
+                content_id: productId,
+                content_name: productName,
+                content_type: 'product',
+                value: price,
+                currency: 'USD'
+            });
+
+            // Fire TikTok Pixel ViewContent event
+            if (typeof ttq !== 'undefined') {
+                ttq.track('ViewContent', {
+                    content_id: productId,
+                    content_name: productName,
+                    content_type: 'product',
+                    value: price,
+                    currency: 'USD'
+                });
+            }
+        }
+
+        // AddToCart Event
+        function addToCart(productId, productName, price) {
+            cart.push({
+                id: productId,
+                name: productName,
+                price: price,
+                quantity: 1
+            });
+
+            updateCart();
+
+            logEvent('AddToCart', {
+                content_id: productId,
+                content_name: productName,
+                content_type: 'product',
+                value: price,
+                currency: 'USD',
+                quantity: 1
+            });
+
+            // Fire TikTok Pixel AddToCart event
+            if (typeof ttq !== 'undefined') {
+                ttq.track('AddToCart', {
+                    content_id: productId,
+                    content_name: productName,
+                    content_type: 'product',
+                    value: price,
+                    currency: 'USD',
+                    quantity: 1
+                });
+            }
+        }
+
+        // Update cart display
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p style="color: #999; text-align: center; padding: 20px;">Your cart is empty</p>';
+            } else {
+                cartItemsDiv.innerHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.name}</strong>
+                            <div style="color: #666; font-size: 14px;">Quantity: ${item.quantity}</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700;">$${item.price.toFixed(2)}</div>
+                            <button class="btn" style="font-size: 12px; padding: 5px 10px; margin-top: 5px;"
+                                    onclick="removeFromCart(${index})">Remove</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Update totals
+            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const tax = subtotal * 0.08; // 8% tax
+            const total = subtotal + tax;
+
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Remove from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // InitiateCheckout Event
+        function initiateCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+            logEvent('InitiateCheckout', {
+                contents: cart.map(item => ({
+                    content_id: item.id,
+                    content_name: item.name,
+                    quantity: item.quantity
+                })),
+                value: total,
+                currency: 'USD',
+                num_items: cart.length
+            });
+
+            // Fire TikTok Pixel InitiateCheckout event
+            if (typeof ttq !== 'undefined') {
+                ttq.track('InitiateCheckout', {
+                    contents: cart.map(item => ({
+                        content_id: item.id,
+                        content_name: item.name,
+                        quantity: item.quantity
+                    })),
+                    value: total,
+                    currency: 'USD'
+                });
+            }
+
+            // Scroll to checkout form
+            document.getElementById('checkout-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // AddPaymentInfo Event
+        function handlePaymentInfo() {
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            if (paymentMethod) {
+                const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+                logEvent('AddPaymentInfo', {
+                    payment_method: paymentMethod,
+                    value: total,
+                    currency: 'USD'
+                });
+
+                // Fire TikTok Pixel AddPaymentInfo event
+                if (typeof ttq !== 'undefined') {
+                    ttq.track('AddPaymentInfo', {
+                        value: total,
+                        currency: 'USD'
+                    });
+                }
+            }
+        }
+
+        // CompletePayment Event
+        function completePayment(event) {
+            event.preventDefault();
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            logEvent('CompletePayment', {
+                contents: cart.map(item => ({
+                    content_id: item.id,
+                    content_name: item.name,
+                    quantity: item.quantity,
+                    price: item.price
+                })),
+                value: total,
+                currency: 'USD',
+                email: email,
+                phone: phone
+            });
+
+            // Fire TikTok Pixel CompletePayment event
+            if (typeof ttq !== 'undefined') {
+                ttq.track('CompletePayment', {
+                    contents: cart.map(item => ({
+                        content_id: item.id,
+                        content_name: item.name,
+                        quantity: item.quantity
+                    })),
+                    value: total,
+                    currency: 'USD'
+                });
+            }
+
+            alert('✅ Order completed! (Test transaction)\n\nCheck the Event Log and TikTok Pixel Helper to verify the CompletePayment event was fired.');
+
+            // Clear cart
+            cart = [];
+            updateCart();
+            document.getElementById('checkout-form').reset();
+
+            return false;
+        }
+
+        // Contact/Subscribe Event
+        function handleNewsletter(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('newsletter-email').value;
+
+            logEvent('Contact', {
+                email: email
+            });
+
+            // Fire TikTok Pixel Contact event
+            if (typeof ttq !== 'undefined') {
+                ttq.track('Contact', {});
+            }
+
+            alert('✅ Subscribed to newsletter!\n\nCheck the Event Log and TikTok Pixel Helper to verify the Contact event was fired.');
+            document.getElementById('newsletter-form').reset();
+
+            return false;
+        }
+
+        // Search Event
+        function handleSearch(event) {
+            event.preventDefault();
+
+            const query = document.getElementById('search-query').value;
+
+            logEvent('Search', {
+                query: query,
+                search_string: query
+            });
+
+            // Fire TikTok Pixel Search event
+            if (typeof ttq !== 'undefined') {
+                ttq.track('Search', {
+                    query: query,
+                    search_string: query
+                });
+            }
+
+            alert(`🔍 Search performed: "${query}"\n\nCheck the Event Log and TikTok Pixel Helper to verify the Search event was fired.`);
+
+            return false;
+        }
+
+        // Page load event
+        window.addEventListener('load', function() {
+            logEvent('PageView', {
+                page_title: document.title,
+                page_url: window.location.href
+            });
+
+            // Initialize cart display
+            updateCart();
+        });
+    </script>
+</body>
+</html>
